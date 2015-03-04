@@ -30,6 +30,7 @@ module Gel
     def Gel::load_data
       if !@gels_loaded
         ['rosco'].each do |brand|
+          puts "Loading #{brand}…"
           Gel::load_gels_from_file "./#{brand}.csv"
         end
       end
@@ -39,16 +40,11 @@ module Gel
       source_text = File.read(file_name)
       csv = CSV.parse(source_text)
       csv.each do |gel|
-        if gel.is_a? Array
-          if gel.length == 5
-            gel[4] = gel[4][0..-2]
-            @gels.push({
-              code: gel[0],
-              name: gel[1],
-              rgb: [gel[2], gel[3], gel[4]]
-              })
-          end
-        end
+        @gels.push({
+          code: gel['Code'],
+          name: gel['Name'],
+          rgb: [gel['Red'], gel['Green'], gel['Blue']]
+          })
       end
     end
 end
