@@ -38,7 +38,7 @@ module Gel
 
     def Gel::load_gels_from_file(file_name)
       source_text = File.read(file_name)
-      csv = CSV.parse(source_text)
+      csv = CSV.parse(source_text, :headers => true)
       csv.each do |gel|
         @gels.push({
           code: gel['Code'],
