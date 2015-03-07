@@ -1,4 +1,3 @@
-require 'csv'
 require './gels.rb'
 
 module Gel
