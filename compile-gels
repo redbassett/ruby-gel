@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+require 'csv'
+
+def info(message)
+  puts printf("  [ \033[00;34m..\033[0m ] #{message}")
+end
+
+def success(message)
+  puts printf("\r\033[2K  [ \033[00;32mOK\033[0m ] #{message}")
+end
+
+def fail(message)
+  puts printf("\r\033[2K  [\033[0;31mFAIL\033[0m] #{message}")
+end
+
+output = "def gels\n  [\n"
+
+ARGV.each do |arg|
+  arg = arg.sub('.csv', '')
+  filepath = ['./data/', arg, '.csv'].join('')
+  if File.exist?(filepath)
+    info "Loading \"#{filepath}\"…"
+    source = File.read(filepath)
+    csv = CSV.parse(source, :headers => true)
+    csv.each_with_index do |gel, index|
+      output += "    { code: '#{gel['Code']}', name: '#{gel['Name']}', rgb: { red: #{gel['Red']}, green: #{gel['Green']}, blue: #{gel['Blue']} } }"
+      output += "," if index != csv.length-1
+      output += "\n"
+    end
+    success "Added gels from \"#{filepath}\"."
+  else
+    fail "Requested file doesn't exist: \"#{filepath}\"."
+  end
+end
+
+
+output += "  ]\nend"
+
+IO.write('./gels.rb', output)
+success 'File written.'
