@@ -23,8 +23,9 @@ module Gel
   end
   
   private
-    def self::get_gel_by_code(code)
-      returns = @gels.select { |gel| gel[:code] === code.upcase }
-      returns[0]
-    end
+  
+  def self::get_gel_by_code(code)
+    returns = @gels.select { |gel| gel[:code] === code.upcase }
+    returns[0]
+  end
 end
