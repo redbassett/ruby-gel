@@ -19,3 +19,17 @@ Gel::name 'R00'
 Gel::rgb 'R39'
 # { red: 255, green: 64, blue: 255 }
 ```
+
+### You can also gel all gels for the whole object for specific gels:
+
+```
+Gel::gels
+# All Gels
+
+Gel::gels 'r00', 'r01'
+# R00 and R01 objects
+
+## Features to add:
+- [x] This checklist to the README.me (#2)
+- [x] Add the ability to select specific gels via the `Gel::gels``` method (#1)
+- [ ] Handle invalid gel codes gracefully (#3)
