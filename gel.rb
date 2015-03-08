@@ -4,8 +4,14 @@ module Gel
   
   @gels = gels
   
-  def Gel::gels
-    @gels
+  def Gel::gels(*codes)
+    if codes.length > 0
+      result = []
+      codes.each { |code| result.push get_gel_by_code(code) }
+      result
+    else
+      @gels
+    end
   end
   
   def Gel::rgb(code)
