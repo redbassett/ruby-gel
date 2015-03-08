@@ -28,6 +28,7 @@ Gel::gels
 
 Gel::gels 'r00', 'r01'
 # R00 and R01 objects
+```
 
 ## Features to add:
 - [x] This checklist to the README.me (#2)
