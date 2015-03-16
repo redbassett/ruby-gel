@@ -5,7 +5,9 @@ module Gel
   @gels = gels
   
   def self::gels(*codes)
-    if codes.length > 0
+    if codes.length == 1
+      get_gel_by_code(codes[0])
+    elsif codes.length > 1
       result = []
       codes.each { |code| result.push get_gel_by_code(code) }
       result
