@@ -9,6 +9,5 @@ Gem::Specification.new do |s|
   s.authors       = ['Harry Grillo']
   s.email         = 'harry@redbassett.com'
   s.homepage      = 'https://github.com/redbassett/ruby-gel'
-  s.files         = Dir['Rakefile', '{bin,lib,test,data}/**/*', 'README.md']
-  s.executables   = ['compile-gels']
+  s.files         = Dir['Rakefile', '{lib,test}/**/*', 'README.md']
 end
