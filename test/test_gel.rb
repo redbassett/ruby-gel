@@ -1,4 +1,4 @@
-require_relative 'gel'
+require_relative '../lib/gel'
 require 'test/unit'
 
 class TestGel < Test::Unit::TestCase

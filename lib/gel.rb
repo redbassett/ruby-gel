@@ -1,4 +1,4 @@
-require './gels.rb'
+require_relative 'gels'
 
 module Gel
   

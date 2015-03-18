@@ -36,5 +36,5 @@ end
 
 output += "  ]\nend"
 
-IO.write('./gels.rb', output)
+IO.write('lib/gels.rb', output)
 success 'File written.'
