@@ -7,7 +7,7 @@ A Ruby module containing a library of lighting "[gels](https://en.wikipedia.org/
 The gels available in the module are found in the `data` directory, in the form of `.csv` files. Each file represents a gel collection.
 
 ## Compiling Gels
-To avoid unescesary loading and parsing of `.csv` files, the gel library is compiled into native Ruby code. To do this, run the `compile-gels` executable with the name of each `.csv` file to compile:
+To avoid unnescesary loading and parsing of `.csv` files, the gel library is compiled into native Ruby code. To do this, run the `compile-gels` executable with the name of each `.csv` file to compile:
 
 ```$ ./compile-gels rosco lee gam```
 
